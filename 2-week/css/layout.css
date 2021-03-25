@@ -1,0 +1,149 @@
+body{
+    padding: 0;
+    margin: 0;
+    min-width: 1000px;
+}
+
+#header{
+    height: 101px;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 10; 
+    color: #182153;
+}
+
+.logo{
+    position: absolute; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    margin-left: 50px; 
+    font-size: 30px;
+    transition-property: color;
+}
+
+
+.menu-list{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0; 
+    display: flex;
+    margin-right: 50px;
+    font-size: 16px;
+}
+
+.menu-list .menu a{
+    text-decoration: none; 
+    color: #182153;
+    padding: 0 38px;
+    transition-property: color;
+    transition-duration: 1s;
+}
+
+
+#profile{
+    height: 586px;
+    background-color: rgb(24, 33, 83);
+    margin-top: 101px;
+    position: relative;
+    overflow: hidden; 
+}
+
+.profile-back{
+    opacity: 0.3;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+}
+
+.personal-info{
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.personal-img{
+    width: 470px;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+.personal-text{
+    width: 470px;
+    background-color: rgb(238, 237, 237);
+}
+
+.personal-text h4 {
+    margin-top: 80px;
+    font-size: 30px;
+    font-weight: 450;
+}
+.personal-text h6 {
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.personal-text p {
+    font-size: 14px;
+    font-weight: lighter;
+}
+
+h4, p, h6{
+    margin: 0;
+    padding-left: 80px;
+    color: #182153;
+}
+
+#greet{
+    position: relative;
+    height: 475px;
+    background-color: rgb(226, 226, 226);
+}
+
+.text {
+    color: #182153;
+    font-size: 22px;
+    position: absolute;
+    top: 33%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.text2 {
+    color: #182153;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 15px;
+}
+
+
+.sns_list{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    z-index: 100;
+    list-style: none;
+}
+
+#sns {
+    position: absolute;
+    overflow: hidden;
+    width: 940px;
+    height: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(14, 10, 74);
+    z-index: 100000;
+}
