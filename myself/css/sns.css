@@ -1,0 +1,125 @@
+
+#header {
+    height: 100px;
+    background-color: rgba(202, 202, 202, 0.646);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 3;
+}
+
+.name {
+    position: absolute; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    margin-left: 50px; 
+    font-size: 32px;
+    transition-property: color;
+    color: rgb(50, 50, 50);;
+}
+
+.menu-list2{
+    display: flex;
+    list-style: none;
+}
+
+.menu2 {
+    text-decoration: none; 
+    color: #53183c;
+    padding: 0 50px;
+    transition-property: color;
+    transition-duration: 1s;
+}
+
+.menu2-1, .menu2-2, .menu2-3 {
+   font-size: 19px;
+}
+
+.menu-list {
+    display: flex;
+    position: absolute;
+    top: 50%; 
+    right: 10%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+
+#menu ul ul {
+    display: none;
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+}
+
+#menu ul li:hover ul {
+    display: block;
+}
+
+.menu-list .menu a{
+    text-decoration: none; 
+    color: #182153;
+    padding: 0 40px;
+    transition-property: color;
+    transition-duration: 1s;
+}
+
+.text {
+    font-size: 20px;
+    color: rgb(71, 68, 177);
+    position: absolute;
+    top: 110;
+    left: 20;
+}
+
+.sns {
+    font-size: 20px;
+    position: absolute;
+    top: 150;
+}
+
+.sns-list .sns1 a {
+    color: #000000;
+    transition-property: color;
+    transition-duration: 1s;
+    position: absolute;
+    top: 170;
+    left: 30;
+    font-size: 18px;
+}
+
+.sns-list .sns2 a {
+    color: #000000;
+    transition-property: color;
+    transition-duration: 1s;
+    position: absolute;
+    top: 195;
+    left: 30;
+    font-size: 18px;
+}
+
+.sns-list .sns3 a {
+    color: #000000;
+    transition-property: color;
+    transition-duration: 1s;
+    position: absolute;
+    top: 220;
+    left: 30;
+    font-size: 18px;
+}
+
+#profile {
+    height: 700px;
+    background-color: rgba(251, 248, 255, 0.85);
+    position: relative;
+    overflow: hidden; 
+    z-index: 2;
+}
+
+.profile-back{
+    opacity: 0.5;
+    position: absolute;
+    left: 0;
+    top: 100;
+    width: 100%;
+    height: auto;
+}

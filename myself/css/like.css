@@ -1,0 +1,125 @@
+p {
+    margin: 0; 
+    width: 550;
+}
+
+
+#header {
+    height: 100px;
+    background-color: rgba(202, 202, 202, 0.646);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 3;
+}
+
+.name {
+    position: absolute; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    margin-left: 50px; 
+    font-size: 32px;
+    transition-property: color;
+    color: rgb(50, 50, 50);;
+}
+
+.menu-list2{
+    display: flex;
+    list-style: none;
+}
+
+.menu2 {
+    text-decoration: none; 
+    color: #53183c;
+    padding: 0 50px;
+    transition-property: color;
+    transition-duration: 1s;
+}
+
+.menu2-1, .menu2-2, .menu2-3 {
+   font-size: 19px;
+}
+
+.menu-list {
+    display: flex;
+    position: absolute;
+    top: 50%; 
+    right: 10%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+
+#menu ul ul {
+    display: none;
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+}
+
+#menu ul li:hover ul {
+    display: block;
+}
+
+.menu-list .menu a{
+    text-decoration: none; 
+    color: #182153;
+    padding: 0 40px;
+    transition-property: color;
+    transition-duration: 1s;
+}
+
+.back {
+    position: absolute;
+    display: flex;
+    margin: 0;
+    top: 120;
+}
+
+.back .img1 {
+    opacity: 0.7;
+    height: 500;
+    width: 400;
+    position: absolute;
+    top: 150;
+    left: 30;
+}
+
+.back .img2 {
+    opacity: 0.7;
+    height: 450;
+    width: 450;
+    position: absolute;
+    top: 50;
+    left: 500;
+}
+
+.back .img3 {
+    opacity: 0.9;
+    height: 300;
+    width: 400;
+    position: absolute;
+    top: 420;
+    left: 380;
+}
+
+.back .img4 {
+    opacity: 0.7;
+    height: 390;
+    width: 430;
+    position: absolute;
+    top: 200;
+    left: 900;
+}
+
+.text {
+    position: absolute;
+    top: 0;
+    left: 12;
+    font-size: 17px;
+    color: black;
+}
+
+.text1 { 
+    color: rgb(63, 50, 247);
+    font-size: 19px;
+}
