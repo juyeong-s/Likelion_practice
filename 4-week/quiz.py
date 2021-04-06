@@ -28,10 +28,16 @@ def order(a, b):
             
             all_giv_money = 1000*money_1000 + 500*money_500 + 100*money_100 + 50*money_50 + 10*money_10
             
+            print("1000원: ", money_1000, "개")
+            print("500원: ", money_500, "개")
+            print("100원: ", money_100, "개")
+            print("50원: ", money_50, "개")
+            print("10원: ", money_10, "개")
+            
             return all_giv_money
         
         else:
             continue;
 
 
-print(order(money, all_money), "원")
+print("거스름돈: ", order(money, all_money), "원")
