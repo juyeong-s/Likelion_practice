@@ -32,3 +32,17 @@
 #     minus=a-b
 #     return plus, minus
 
+# def func(a):
+#     return "메롱"
+
+# print(func1234.__name__)
+
+a=1
+
+def func():
+    global a
+    a=9999
+
+func()
+print(a)
+asas
