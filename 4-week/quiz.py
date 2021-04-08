@@ -3,7 +3,7 @@ ame = int(input("아메리카노(3,000원) 몇 잔?: "))
 ratte = int(input("카페라떼(5,000원) 몇 잔?: "))
 chooco = int(input("아이스 초코(500원) 몇 잔?: "))
 
-all_money=3000 * ame + 5000 * ratte + 500 * chooco
+all_money=(3000 * ame) + (5000 * ratte) + (500 * chooco)
 
 print("총 얼마?: ", all_money, "원")
 
@@ -26,7 +26,7 @@ def order(a, b):
             money_10 = giv_money //10
             giv_money %= 10
             
-            all_giv_money = 1000 * money_1000 + 500 * money_500 + 100 * money_100 + 50 * money_50 + 10 * money_10
+            all_giv_money = (1000 * money_1000) + (500 * money_500) + (100 * money_100) + (50 * money_50) + (10 * money_10)
             
             print("1000원: ", money_1000, "개")
             print("500원: ", money_500, "개")
