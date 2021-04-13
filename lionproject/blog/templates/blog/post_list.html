@@ -1,0 +1,15 @@
+<h1>Post list page</h1>
+
+<hr>
+
+<!-- for문 시작 post_list함수에서 가져와서 post에 넣는거임 -->
+
+{% for post in post_list %} <!-- in 뒤에 키 값을 적어주는거임 -->
+<h1>{{ post.title }}</h1>   <!-- model에서 title을 가져오는것 -->
+<span>{{post.updated_at }}</span>
+{% endfor %}
+
+<!-- for문을 돌면서 게시글이 하나하나씩 가져옴 -->
+<!-- {%  %} 이 안에 if for endif with 등등 넣어줌 -->
+<!-- {{}}  변수를 출력하기 위한 공간  변수.함수 -->
+
