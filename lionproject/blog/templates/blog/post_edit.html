@@ -1,0 +1,9 @@
+<h1>수정페이지</h1>
+<hr>
+
+<form action = "{% url 'post_edit' post.id %}" method = "POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="수정">
+    <input type="submit" value="취소" onclick="location.href = '../'">
+</form>
