@@ -1,0 +1,14 @@
+<h1>Post list page</h1>
+
+<hr>
+<input type="button" value="새 글 쓰기" onclick="location.href = 'new'">
+
+{% for post in post_list %} 
+<h1>
+    <!-- <a href="{{ post.id }}">{{ post.title }}</a> -->
+    <a href="{% url 'post_detail' post.id %}">{{ post.title }}</a>
+</h1>   
+<span>{{post.updated_at }}</span>
+{% endfor %}
+
+

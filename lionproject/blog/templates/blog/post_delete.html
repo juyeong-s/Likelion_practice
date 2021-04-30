@@ -1,0 +1,8 @@
+<h1>삭제페이지</h1>
+<hr>
+
+<form action = "{% url 'post_edit' post.id %}" method = "POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="button" value="삭제">
+</form>
