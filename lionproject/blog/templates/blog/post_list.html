@@ -1,7 +1,7 @@
 <h1>Post list page</h1>
 
 <hr>
-<input type="button" value="새 글 쓰기" onclick="location.href = 'new'">
+<a href="{% url 'post_new' %}"><input type="button" value="새 글 쓰기"></a>
 
 {% for post in post_list %} 
 <h1>

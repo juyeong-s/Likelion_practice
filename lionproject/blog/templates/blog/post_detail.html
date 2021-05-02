@@ -7,6 +7,6 @@
 <small>{{ post.updated_at }}</small><br>
 
 <form>
-    <input type="button" value="수정" onclick="location.href='edit'">
-    <input type="button" value="목록" onclick="location.href='../'">
+    <a href="{% url 'post_edit' post_id %}"><input type="button" value="수정"></a>
+    <a href="{% url 'post_list' %}"><input type="button" value="목록"></a>
 </form>
