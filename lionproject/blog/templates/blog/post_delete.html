@@ -4,5 +4,5 @@
 <form action = "{% url 'post_edit' post_id %}" method = "POST">
     {% csrf_token %}
     {{ form.as_p }}
-    <input type="button" value="삭제">
+    <input type="button" value="삭제"><a></a>
 </form>
