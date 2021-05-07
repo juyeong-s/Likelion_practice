@@ -1,0 +1,8 @@
+
+<a href="{% url 'post_new' %}">새 글 작성하기</a>
+<br>
+
+{% for post in posts  %}
+<a href="{% url 'post_detail' post.id %}">{{ post.title }}</a>
+<p>조회수: {{ post.hits }} </p>
+{% endfor %}
