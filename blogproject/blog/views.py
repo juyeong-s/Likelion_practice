@@ -12,9 +12,22 @@ def post_list(request):
 def post_detail(request, post_id):
     post = Post.objects.get(id=post_id)
 
+    if request.method == "GET":
+        post.click()
+
     return render(request, 'blog/post_detail.html', {
         'post' : post,
     })
+
+def post_init(request, post_id):
+    post = Post.objects.get(id=post_id)
+
+    post.init()
+
+    return render(request, 'blog/post_detail.html', {
+        'post' : post,
+    })
+
 
 def post_delete(request, post_id):
     post = Post.objects.get(id=post_id)
@@ -51,4 +64,6 @@ def post_new(request):
         return render(request, 'blog/post_new.html', {
             'form': form,
             })
-    
+
+
+

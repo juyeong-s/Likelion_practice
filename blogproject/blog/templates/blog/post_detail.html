@@ -4,6 +4,11 @@
 
 {{ post.content }}<br><br>
 
+<p>조회수 : {{ post.hits }}</p>
+<br>
+
+<a href="{% url 'post_init' post.id  %}">초기화</a>
 <a href="{% url 'post_edit' post.id %}">글 수정하기</a>
 <a href="{% url 'post_list' %}">목록으로</a>
 <a href="{% url 'post_delete' post.id %}">글 삭제하기</a>
+
