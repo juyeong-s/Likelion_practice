@@ -1,7 +1,32 @@
-<h1>Post list page</h1>
+{% extends 'blog/base.html' %}
 
-<hr>
-<input type="button" value="새 글 쓰기" onclick="location.href = 'new'">
+{% block content %}
+
+<table class="table">
+    <thead>
+        <th>id</th>
+        <th>제목</th>
+        <th>작성시간</th>
+    </thead>
+    <tbody>
+        {% for post in post_list %}
+        <tr>
+            <td>{{ post.id }}</td>
+            <td>
+                <a href="{% url 'post_detail' post.id %}">{{ post.title }}</a>
+            </td>
+            <td>{{ post.updated_at }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<br>
+
+<a href="{% url 'post_new' %}" class="btn btn-primary float-end">새 글 쓰기</a>
+
+{% endblock content %}
+
+
 
 {% for post in post_list %} 
 <h1>
@@ -10,5 +35,3 @@
 </h1>   
 <span>{{post.updated_at }}</span>
 {% endfor %}
-
-
