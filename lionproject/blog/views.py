@@ -46,7 +46,7 @@ def post_edit(request, post_id):
         form = PostForm(instance=post)
 
     elif request.method =='POST':
-        form = PostForm(request.POST, instance=post)
+        form = PostForm(request.POST, request.FILES)
         if form.is_valid():
             post = form.save()
             return redirect('post_detail', post_id=post.id)
