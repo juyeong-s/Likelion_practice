@@ -11,7 +11,7 @@ def post_list(request):
 #key를 통해 value를 가져오니까
 #context['key']랑 같은거임
 
-  #첫번재 인자는 무조건 repuest
+  #첫번재 인자는 무조건 repuest  post_id 는 urls.py에서 <int: post_id> 이 이름임
 def post_detail(request, post_id):  
 
     post = Post.objects.get(id=post_id)
@@ -27,7 +27,7 @@ def post_new(request):
 
     elif request.method =='POST':
         #사용자가 입력한 데이터를 저장하는 부분
-        form = PostForm(request.POST)
+        form = PostForm(request.POST, request.FILES)
         if form.is_valid():  #사용자가 입력한 데이터에 문제가 없으면 if문 실행
             post = form.save()
             return redirect('post_detail', post_id=post.id)
@@ -57,7 +57,8 @@ def post_edit(request, post_id):
     })
 
 def post_delete(request, post_id):
-    post = get_object_or_404(Post, id=post_id)
+    post = Post.objects.get(id=post_id)
+    #post = get_object_or_404(Post, id=post_id)
     post.delete()
     return redirect('post_list')
-    
+
