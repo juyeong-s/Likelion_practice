@@ -7,8 +7,12 @@
 
 <p>
     <!-- 이미지가 없는 게시물도 있으니까 if문을 씀 -->
-    {% if post.image %}
-    <img src="{{ post.image.url }}">
+    {% if post.image_1 %}
+    <img src="{{ post.image_1.url }}">
+    {% endif %}
+
+    {% if post.image_2 %}
+    <img src="{{ post.image_2.url }}">
     {% endif %}
 </p>
 
@@ -19,9 +23,9 @@
 <small>{{ post.updated_at }}</small><br>
 
 <form>
-    <button><a href="{% url 'post_edit' post.id %}"><input type="button" value="수정"></a></button>
-    <button><a href="{% url 'post_list' %}"><input type="button" value="목록"></a></button>
-    <button><a href="{% url 'post_delete' post.id %}">삭제</a></button>
+    <a href="{% url 'post_edit' post.id %}"><input type="button" value="수정"></a>
+    <a href="{% url 'post_list' %}"><input type="button" value="목록"></a>
+    <a href="{% url 'post_delete' post.id %}"><input type="button" value="삭제"></a>
 </form>
 
 {% endblock content %}

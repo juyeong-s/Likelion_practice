@@ -1,3 +1,7 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
 <h1>새 글 작성하기</h1>
 <!-- form태그를 이용해 파일을 저장하기 방법 : 이미지를 포함한 모든 파일을 저장하기 위해서는 
     form태그의 enctype이 multipart/form-data값을 가져야함 -->
@@ -6,3 +10,5 @@
     {{ form.as_p }}
     <input type="submit" value="생성">
 </form>
+
+{% endblock %}
