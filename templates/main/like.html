@@ -1,0 +1,35 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main/like.css' %}">
+    <title>like</title>
+</head>
+<body>
+    <div class="back">
+  
+        <img class="img" src="{% static 'main/image/엘사.jpg' %}" style="height: 200px; width: 200px; position: relative; top: 150px; left: 10px;">
+        <img class="img2" src="{% static 'main/image/푸우.jpg' %}" style="height: 200px; width: 200px; position: relative; top: 150px; left: 30px;">
+        <img class="img3" src="{% static 'main/image/집.jpg' %}" style="height: 200px; width: 200px; position: relative; top: 150px; left: 50px;">
+        <img class="img4" src="{% static 'main/image/짱구.jpg' %}" style="height: 200px; width: 200px; position: relative; top: 150px; left: 80px;">
+
+        <div class="text" style="position: absolute; top: 360px;">
+            <p>
+                <p class="text1"><strong> My favorite thing is...</strong><br></p>
+                &nbsp; 1. Making something with my hands - anything is fine!<br>
+                &nbsp;  (I inserted pictures of things I made myself in the background.)<br>
+                &nbsp; 2. Green tea latte - I always drink green tea at the cafe!<br>
+                &nbsp; 3. Listening to pop songs<br>
+                &nbsp; 4. Playing League of Legends<br>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<html>
+    <head>
+        <title>My Wesite</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'main/base.css' %}">
+    </head>
+    <style>
+        th {
+            width: 180;
+            height: 250px;
+            background-color: rgba(236, 226, 245, 0.762);
+        }
+        </style>
+
+    <body>
+
+        <section id="welcome">
+            <div class="welcome-in" style="z-index: 9;">WECOME!</div>
+        </section>
+        
+        <section id="profile" style="z-index: 2;">
+            <img class="profile-back" src="{% static 'main/image/back-ground.jpeg' %}"/>
+            <div class="profile-info" style="position: relative; top: 50px;">
+                <div class="profile-img">
+                    <img class="img1" src="{% static 'main/image/증명사진.jpg' %}" />
+            <p style="color: rgb(255, 255, 255); position: absolute; left: 100px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                 신주영<br>충북대학교 소프트웨어<br>멋쟁이 사자처럼 9기<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MBTI:ENFP</p>
+                </div>
+
+            <div class="profile-text">
+            <table class="table" border="1" style="background-color: rgba(251, 248, 255, 0.85);">
+                <tr>
+                    <th><a href="{% url 'like' %}" target="_self" style="padding-top: 200px;">1. What I like?</a></th>
+                    <th><a href="{% url 'dislike' %}" target="_self">2. What I dislike?</a></th>
+                </tr>
+                <tr>
+                    <th><a href="{% url 'sns' %}" target="_self">3. SNS</a></th>
+                    <th>❤</th>
+                </tr>
+            </table>
+            </div>
+            </div>
+        </section>
+            
+    </body>
+
+</html>
+{% endblock %}

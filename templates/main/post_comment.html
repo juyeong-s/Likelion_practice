@@ -1,0 +1,20 @@
+<!-- {% extends 'main/base.html' %}
+
+{% block content %}
+
+<h3>댓글달기</h3>
+<form action="{% url 'comment_new' pk %}" method="POST" id="comment_form" style="position: absolute; top: 200px;">
+    {% csrf_token %}
+    {{ form.as_p }}
+  <input type="submit" value="댓글입력">
+</form>
+
+
+{% endblock %} -->
+<!-- 
+    <br>
+    {% for comment in post.comment_set.all %}
+        <p>{{ comment.content }}</p>
+        <p>{{ comment.create_date }}</p>
+        <hr>
+    {% endfor %} -->
