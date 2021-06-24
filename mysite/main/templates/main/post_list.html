@@ -1,0 +1,35 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+<table class="table" style="position: absolute; top: 200px; left: 10px;">
+
+    <thead  style="background-color: rgb(238, 219, 255);">
+        <th>ID</th>
+        <th>제목</th>
+        <th>작성시간</th>
+    </thead>
+    <tbody>
+        {% for post in post_list %}
+        <tr>
+            <td>{{ post.id }}</td>
+            <td>
+                <a href="{% url 'post_detail' post.id %}" style="text-decoration: none;">{{ post.title }}</a>
+            </td>
+            <td>{{ post.created_at }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<br>
+<a href="{% url 'post_new' %}" class="btn btn-primary float-end" style="color: black; position: absolute; top: 150px; left: 10px; border: 1px solid rgb(216, 143, 245); background-color: rgb(238, 219, 255);">새 글 쓰기</a>
+
+{% endblock content %}
+
+{% for post in post_list %} 
+<h1>
+    <!-- <a href="{{ post.id }}">{{ post.title }}</a> -->
+    <a href="{% url 'post_detail' post.id %}">{{ post.title }}</a>
+</h1>   
+<!-- <span>{{ post.updated_at }}</span> -->
+{% endfor %}

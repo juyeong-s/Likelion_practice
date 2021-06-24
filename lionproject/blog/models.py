@@ -1,8 +1,10 @@
 from django.db import models
+from django.conf import settings
 
 
 class Post(models.Model):  # Post 데이터베이스를 하나 만든거임
     title = models.CharField(max_length=100)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     content = models.TextField()
     image_1 = models.ImageField(blank=True, upload_to='blog') #빈 값이 True --> 사용자가 이미지를 안넣어도 된다는 것
     image_2 = models.ImageField(blank=True, upload_to='blog2')
@@ -13,4 +15,3 @@ class Post(models.Model):  # Post 데이터베이스를 하나 만든거임
 
     def __str__(self):
         return f'{self.title}' #내 자신의 title속성을 리턴
-

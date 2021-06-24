@@ -1,0 +1,43 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<div style="position: absolute; top: 150px; left: 100px;">
+        <h1 style="border-radius: 5px 5px; background-color: rgb(219, 180, 255); color: white;">{{ post.title }}</h1>
+        <hr>
+        <p>
+            {{ post.content }}
+        </p>
+
+        <small>{{ post.created_at }}</small><br>
+
+        <a href="{% url 'post_edit' post.id %}"><input type="button" value="수정" style="border: 1px solid rgb(0, 0, 0); background-color: rgb(254, 255, 188);"></a>
+
+        <a href="{% url 'post_list' %}"><input type="button" value="목록"  style="border: 1px solid rgb(0, 0, 0); background-color: rgb(254, 255, 188);"></a>
+        <a href="{% url 'post_delete' post.id %}"><input type="button" value="삭제"  style="border: 1px solid rgb(0, 0, 0); background-color: rgb(254, 255, 188);"></a>
+</div>
+
+<div class="container" style="position: absolute; top: 150px; left: 450px;">
+    <!--생략-->
+    <h4 style="font-family:Arial, Helvetica, sans-serif;">Comment</h4>
+    <ul style="border-radius: 10px 10px; list-style: none; background-color: rgb(238, 219, 255);">
+        {% for comment in comments %}
+            <li>
+                {{comment.body}}           
+            </li>
+            <li>
+                <small>{{comment.date}}</small>
+            </li>
+            <hr>
+        {% endfor %}
+    </ul>
+
+    <h4>댓글 달기</h4>    
+        <form method="POST">
+          {% csrf_token %}
+          <input name="body" type="text" value="">
+          <input class="btn btn-primary" type="submit" value="입력" style="background-color: rgb(219, 180, 255) !important;">
+        </form>
+  
+</div>
+   
+{% endblock %}

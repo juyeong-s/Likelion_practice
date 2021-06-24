@@ -3,15 +3,15 @@ from .forms import PostForm
 from .models import Post
 
 def post_list(request):
-    post_list = Post.objects.all()  #Postí´ë˜ìŠ¤ì—ì„œ ë°ì´í„°ë² ì´ìŠ¤ì—ì„œ ë°ì´í„°ë¥¼ ê°€ì ¸ì˜´
+    post_list = Post.objects.all()  #PostÅ¬·¡½º¿¡¼­ µ¥ÀÌÅÍº£ÀÌ½º¿¡¼­ µ¥ÀÌÅÍ¸¦ °¡Á®¿È
     context = {
-        'post_list': post_list,  #'post_list'ê°€ htmlì—ì„œ forë¬¸ì—ì„œ ì“°ì„, 'post_list'ì´ë¦„ì„ htmlì´ ì•Œì•„ì•¼ë¨
+        'post_list': post_list,  #'post_list'°¡ html¿¡¼­ for¹®¿¡¼­ ¾²ÀÓ, 'post_list'ÀÌ¸§À» htmlÀÌ ¾Ë¾Æ¾ßµÊ
     }
     return render(request,'blog/post_list.html', context)
-#keyë¥¼ í†µí•´ valueë¥¼ ê°€ì ¸ì˜¤ë‹ˆê¹Œ
-#context['key']ë‘ ê°™ì€ê±°ì„
+#key¸¦ ÅëÇØ value¸¦ °¡Á®¿À´Ï±î
+#context['key']¶û °°Àº°ÅÀÓ
 
-  #ì²«ë²ˆì¬ ì¸ìëŠ” ë¬´ì¡°ê±´ repuest  post_id ëŠ” urls.pyì—ì„œ <int: post_id> ì´ ì´ë¦„ì„
+  #Ã¹¹øÀç ÀÎÀÚ´Â ¹«Á¶°Ç repuest  post_id ´Â urls.py¿¡¼­ <int: post_id> ÀÌ ÀÌ¸§ÀÓ
 def post_detail(request, post_id):  
 
     post = Post.objects.get(id=post_id)
@@ -26,10 +26,22 @@ def post_new(request):
         form = PostForm()
 
     elif request.method =='POST':
-        #ì‚¬ìš©ìê°€ ì…ë ¥í•œ ë°ì´í„°ë¥¼ ì €ì¥í•˜ëŠ” ë¶€ë¶„
+        #»ç¿ëÀÚ°¡ ÀÔ·ÂÇÑ µ¥ÀÌÅÍ¸¦ ÀúÀåÇÏ´Â ºÎºĞ
         form = PostForm(request.POST, request.FILES)
-        if form.is_valid():  #ì‚¬ìš©ìê°€ ì…ë ¥í•œ ë°ì´í„°ì— ë¬¸ì œê°€ ì—†ìœ¼ë©´ ifë¬¸ ì‹¤í–‰
-            post = form.save()
+        if form.is_valid():  #»ç¿ëÀÚ°¡ ÀÔ·ÂÇÑ µ¥ÀÌÅÍ¿¡ ¹®Á¦°¡ ¾øÀ¸¸é if¹® ½ÇÇà
+            post = form.save(commit=False)
+            post.user = request.user
+            post.save(commit=True)
+
+            # title = form.cleaned_data['title']
+            # content = form.cleaned_data['content']
+            # image_1 = form.cleaned_data['image_1']
+            # image_2 = form.cleaned_data['image_2']
+            # post = Post.objects.create(title=title,
+            #                             content=content, 
+            #                             image_1=image_1,
+            #                             image_2=image_2)
+
             return redirect('post_detail', post_id=post.id)
 
     return render(request, 'blog/post_new.html', {
